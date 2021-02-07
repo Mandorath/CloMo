@@ -1,0 +1,2705 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 2,
+  "iteration": 1612341555818,
+  "links": [],
+  "panels": [
+    {
+      "cacheTimeout": null,
+      "datasource": "Elasticsearch",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 5,
+        "x": 0,
+        "y": 0
+      },
+      "id": 4,
+      "interval": null,
+      "links": [],
+      "maxDataPoints": 1,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "max"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "userIdentity.userName.keyword:$user AND run.keyword:$experiment AND eventName.keyword: $event_type",
+          "queryType": "randomWalk",
+          "refId": "A",
+          "timeField": "@timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Action attempts $experiment: $user",
+      "type": "stat"
+    },
+    {
+      "datasource": "Elasticsearch",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 5,
+        "y": 0
+      },
+      "id": 8,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "userIdentity.userName.keyword:$user AND run.keyword:$experiment AND eventName.keyword: RunInstances",
+          "queryType": "randomWalk",
+          "refId": "A",
+          "timeField": "@timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "AWS event: RunInstances",
+      "type": "stat"
+    },
+    {
+      "datasource": "Elasticsearch",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 3,
+        "x": 9,
+        "y": 0
+      },
+      "id": 10,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.3.6",
+      "repeat": null,
+      "repeatDirection": "v",
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "userIdentity.userName.keyword:$user AND run.keyword:$experiment AND eventName.keyword: DescribeInstances",
+          "queryType": "randomWalk",
+          "refId": "A",
+          "timeField": "@timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "AWS event: DescribeInstances",
+      "type": "stat"
+    },
+    {
+      "datasource": "Elasticsearch",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 3,
+        "x": 12,
+        "y": 0
+      },
+      "id": 12,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "userIdentity.userName.keyword:$user AND run.keyword:$experiment AND eventName.keyword: DescribeVpcs",
+          "queryType": "randomWalk",
+          "refId": "A",
+          "timeField": "@timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "AWS event: DescribeVpcs",
+      "type": "stat"
+    },
+    {
+      "datasource": "Elasticsearch",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 3,
+        "x": 15,
+        "y": 0
+      },
+      "id": 14,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "userIdentity.userName.keyword:$user AND run.keyword:$experiment AND eventName.keyword: DescribeSubnets",
+          "queryType": "randomWalk",
+          "refId": "A",
+          "timeField": "@timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "AWS event: DescribeSubnets",
+      "type": "stat"
+    },
+    {
+      "datasource": "Elasticsearch",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 3,
+        "x": 18,
+        "y": 0
+      },
+      "id": 16,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "userIdentity.userName.keyword:$user AND run.keyword:$experiment AND eventName.keyword: DescribeHosts",
+          "queryType": "randomWalk",
+          "refId": "A",
+          "timeField": "@timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "AWS event: DescribeHosts",
+      "type": "stat"
+    },
+    {
+      "datasource": "Elasticsearch",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 3,
+        "x": 21,
+        "y": 0
+      },
+      "id": 18,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "userIdentity.userName.keyword:$user AND run.keyword:$experiment AND eventName.keyword: GetBucket*",
+          "queryType": "randomWalk",
+          "refId": "A",
+          "timeField": "@timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "AWS events: S3 Buckets",
+      "type": "stat"
+    },
+    {
+      "datasource": "Elasticsearch",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 3,
+        "x": 0,
+        "y": 8
+      },
+      "id": 19,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "userIdentity.userName.keyword:$user AND run.keyword:$experiment AND userAgent.keyword: Boto*",
+          "queryType": "randomWalk",
+          "refId": "A",
+          "timeField": "@timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "UserAgent: Boto",
+      "type": "stat"
+    },
+    {
+      "datasource": "Elasticsearch",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 3,
+        "x": 3,
+        "y": 8
+      },
+      "id": 20,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "userIdentity.userName.keyword:$user AND run.keyword:$experiment AND userAgent.keyword: aws-cli*",
+          "queryType": "randomWalk",
+          "refId": "A",
+          "timeField": "@timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "UserAgent: aws-cli",
+      "type": "stat"
+    },
+    {
+      "datasource": "Elasticsearch",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 3,
+        "x": 6,
+        "y": 8
+      },
+      "id": 21,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "userIdentity.userName.keyword:$user AND run.keyword:$experiment AND userAgent.keyword: aws-sdk-nodejs*",
+          "queryType": "randomWalk",
+          "refId": "A",
+          "timeField": "@timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "UserAgent: aws-sdk-nodejs",
+      "type": "stat"
+    },
+    {
+      "datasource": "Elasticsearch",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 3,
+        "x": 9,
+        "y": 8
+      },
+      "id": 23,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "userIdentity.userName.keyword:$user AND run.keyword:$experiment AND userAgent.keyword: aws-sdk-dotnet*",
+          "queryType": "randomWalk",
+          "refId": "A",
+          "timeField": "@timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "UserAgent: aws-sdk-dotnet",
+      "type": "stat"
+    },
+    {
+      "datasource": "Elasticsearch",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 3,
+        "x": 12,
+        "y": 8
+      },
+      "id": 22,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "userIdentity.userName.keyword:$user AND run.keyword:$experiment AND userAgent.keyword: ElasticWolf*",
+          "queryType": "randomWalk",
+          "refId": "A",
+          "timeField": "@timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "UserAgent: ElasticWolf",
+      "type": "stat"
+    },
+    {
+      "datasource": "Elasticsearch",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 3,
+        "x": 15,
+        "y": 8
+      },
+      "id": 24,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "userIdentity.userName.keyword:$user AND run.keyword:$experiment AND userAgent.keyword: aws-sdk-go*",
+          "queryType": "randomWalk",
+          "refId": "A",
+          "timeField": "@timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "UserAgent: aws-sdk-go",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 18,
+        "y": 8
+      },
+      "id": 26,
+      "options": {
+        "bgColor": "rgba(20, 22, 25, 0)",
+        "clockType": "24 hour",
+        "countdownSettings": {
+          "endCountdownTime": "2021-02-01T15:24:16+01:00",
+          "endText": "00:00:00"
+        },
+        "dateSettings": {
+          "dateFormat": "YYYY-MM-DD",
+          "fontSize": "50px",
+          "fontWeight": "normal",
+          "showDate": true
+        },
+        "mode": "time",
+        "timeSettings": {
+          "fontSize": "70px",
+          "fontWeight": "normal"
+        },
+        "timezone": "Europe/Amsterdam",
+        "timezoneSettings": {
+          "fontSize": "50px",
+          "fontWeight": "normal",
+          "showTimezone": true,
+          "zoneFormat": "offsetAbbv"
+        }
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "queryType": "randomWalk",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Time Europe/Amsterdam",
+      "transparent": true,
+      "type": "grafana-clock-panel"
+    },
+    {
+      "datasource": "Elasticsearch",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 16
+      },
+      "id": 28,
+      "options": {
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "Count"
+          }
+        ]
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "field": "eventName.keyword",
+              "id": "2",
+              "settings": {
+                "min_doc_count": 0,
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "eventName.keyword",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "count"
+            }
+          ],
+          "query": "userIdentity.userName.keyword:$user AND run.keyword:$experiment",
+          "queryType": "randomWalk",
+          "refId": "A",
+          "timeField": "@timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Panel Title",
+      "type": "table"
+    },
+    {
+      "datasource": "Elasticsearch",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "userIdentity.arn"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 609
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "requestParameters.policyArn"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 168
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "errorMessage"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 238
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "errorCode"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 136
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "userAgent"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 455
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "eventName"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 249
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "@timestamp"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 174
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "requestParameters.clientToken"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 292
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 20,
+        "w": 24,
+        "x": 0,
+        "y": 24
+      },
+      "id": 2,
+      "options": {
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "@timestamp"
+          }
+        ]
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "bucketAggs": [],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "meta": {},
+              "settings": {
+                "size": 500
+              },
+              "type": "raw_data"
+            }
+          ],
+          "query": "userIdentity.userName.keyword:$user AND run.keyword:$experiment AND eventName.keyword: $event_type",
+          "queryType": "randomWalk",
+          "refId": "A",
+          "timeField": "@timestamp"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Data $experiment: $user",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "@version": true,
+              "_id": true,
+              "_index": true,
+              "_type": true,
+              "eventCategory": false,
+              "eventID": false,
+              "eventVersion": true,
+              "geoip": true,
+              "geoip.country_code3": true,
+              "geoip.ip": true,
+              "geoip.latitude": true,
+              "geoip.location.lat": true,
+              "geoip.location.lon": true,
+              "geoip.longitude": true,
+              "geoip.postal_code": true,
+              "geoip.region_code": true,
+              "geoip.timezone": true,
+              "managementEvent": false,
+              "readOnly": true,
+              "recipientAccountId": true,
+              "requestID": true,
+              "requestParameters": true,
+              "requestParameters.filterSet": false,
+              "run": true,
+              "type": true,
+              "userAgent": false,
+              "userIdentity.invokedBy": false,
+              "userIdentity.principalId": false,
+              "userIdentity.sessionContext.attributes.creationDate": false,
+              "userIdentity.sessionContext.attributes.mfaAuthenticated": false,
+              "userIdentity.sessionContext.sessionIssuer": false,
+              "userIdentity.sessionContext.webIdFederationData": true
+            },
+            "indexByName": {
+              "@timestamp": 0,
+              "@version": 4,
+              "_id": 5,
+              "_index": 6,
+              "_type": 7,
+              "awsRegion": 8,
+              "errorCode": 9,
+              "errorMessage": 10,
+              "eventCategory": 11,
+              "eventID": 12,
+              "eventName": 13,
+              "eventSource": 14,
+              "eventType": 15,
+              "eventVersion": 16,
+              "geoip": 17,
+              "geoip.city_name": 18,
+              "geoip.continent_code": 19,
+              "geoip.country_code2": 20,
+              "geoip.country_code3": 21,
+              "geoip.country_name": 22,
+              "geoip.ip": 23,
+              "geoip.latitude": 24,
+              "geoip.location.lat": 25,
+              "geoip.location.lon": 26,
+              "geoip.longitude": 27,
+              "geoip.postal_code": 28,
+              "geoip.region_code": 29,
+              "geoip.region_name": 30,
+              "geoip.timezone": 31,
+              "managementEvent": 32,
+              "readOnly": 33,
+              "recipientAccountId": 34,
+              "requestID": 35,
+              "requestParameters": 36,
+              "requestParameters.filterSet": 37,
+              "requestParameters.instancesSet": 38,
+              "requestParameters.policyArn": 39,
+              "requestParameters.userName": 40,
+              "requestParameters.vpcSet": 55,
+              "responseElements": 41,
+              "run": 1,
+              "sourceIPAddress": 42,
+              "tags": 43,
+              "type": 44,
+              "userAgent": 2,
+              "userIdentity.accessKeyId": 45,
+              "userIdentity.accountId": 46,
+              "userIdentity.arn": 47,
+              "userIdentity.invokedBy": 48,
+              "userIdentity.principalId": 49,
+              "userIdentity.sessionContext.attributes.creationDate": 50,
+              "userIdentity.sessionContext.attributes.mfaAuthenticated": 51,
+              "userIdentity.sessionContext.sessionIssuer": 52,
+              "userIdentity.sessionContext.webIdFederationData": 53,
+              "userIdentity.type": 54,
+              "userIdentity.userName": 3
+            },
+            "renameByName": {}
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "circleMaxSize": "8",
+      "circleMinSize": "4",
+      "colors": [
+        "#73BF69",
+        "rgba(237, 129, 40, 0.89)",
+        "#F2495C"
+      ],
+      "datasource": "Elasticsearch",
+      "decimals": 0,
+      "esGeoPoint": "geoip.location",
+      "esLocationName": "geoip.city_name.keyword",
+      "esMetric": "Count",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 29,
+        "w": 24,
+        "x": 0,
+        "y": 44
+      },
+      "hideEmpty": false,
+      "hideZero": false,
+      "id": 6,
+      "initialZoom": 1,
+      "locationData": "geohash",
+      "mapCenter": "(0°, 0°)",
+      "mapCenterLatitude": 0,
+      "mapCenterLongitude": 0,
+      "maxDataPoints": 1,
+      "mouseWheelZoom": false,
+      "pluginVersion": "7.3.6",
+      "showLegend": false,
+      "stickyLabels": false,
+      "tableQueryOptions": {
+        "geohashField": "geohash",
+        "labelField": "geoip.country_name",
+        "latitudeField": "geoip.latitude",
+        "longitudeField": "geoip.longitude",
+        "metricField": "geoip.location",
+        "queryType": "coordinates"
+      },
+      "targets": [
+        {
+          "bucketAggs": [
+            {
+              "fake": true,
+              "field": "geoip.city_name.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": 0,
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "10"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "geoip.location",
+              "id": "2",
+              "settings": {
+                "precision": 3
+              },
+              "type": "geohash_grid"
+            }
+          ],
+          "metrics": [
+            {
+              "field": "select field",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "count"
+            }
+          ],
+          "query": "userIdentity.userName.keyword:$user AND run.keyword:$experiment",
+          "queryType": "randomWalk",
+          "refId": "A",
+          "timeField": "@timestamp"
+        }
+      ],
+      "thresholds": "0,10",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Locations $experiment: $user",
+      "type": "grafana-worldmap-panel",
+      "unitPlural": "",
+      "unitSingle": "",
+      "valueName": "current"
+    }
+  ],
+  "refresh": "1m",
+  "schemaVersion": 26,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": "",
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": "Elasticsearch",
+        "definition": "{\"find\": \"terms\", \"field\": \"run.keyword\"}",
+        "error": null,
+        "hide": 0,
+        "includeAll": true,
+        "label": "experiment",
+        "multi": true,
+        "name": "experiment",
+        "options": [],
+        "query": "{\"find\": \"terms\", \"field\": \"run.keyword\"}",
+        "refresh": 1,
+        "regex": "^(experiment-[0-9][0-9])",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": true,
+          "text": [
+            "fransgith",
+            "freekgith",
+            "maartengith",
+            "martingith",
+            "wilfredgith"
+          ],
+          "value": [
+            "fransgith",
+            "freekgith",
+            "maartengith",
+            "martingith",
+            "wilfredgith"
+          ]
+        },
+        "datasource": "Elasticsearch",
+        "definition": "{\"find\": \"terms\", \"field\": \"userIdentity.userName.keyword\"}",
+        "error": null,
+        "hide": 0,
+        "includeAll": true,
+        "label": "user",
+        "multi": true,
+        "name": "user",
+        "options": [
+          {
+            "selected": false,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "bitbucket",
+            "value": "bitbucket"
+          },
+          {
+            "selected": true,
+            "text": "fransgith",
+            "value": "fransgith"
+          },
+          {
+            "selected": true,
+            "text": "freekgith",
+            "value": "freekgith"
+          },
+          {
+            "selected": true,
+            "text": "maartengith",
+            "value": "maartengith"
+          },
+          {
+            "selected": true,
+            "text": "martingith",
+            "value": "martingith"
+          },
+          {
+            "selected": false,
+            "text": "maurice",
+            "value": "maurice"
+          },
+          {
+            "selected": false,
+            "text": "milgith",
+            "value": "milgith"
+          },
+          {
+            "selected": false,
+            "text": "milsour",
+            "value": "milsour"
+          },
+          {
+            "selected": true,
+            "text": "wilfredgith",
+            "value": "wilfredgith"
+          }
+        ],
+        "query": "{\"find\": \"terms\", \"field\": \"userIdentity.userName.keyword\"}",
+        "refresh": 0,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "datasource": "Elasticsearch",
+        "error": null,
+        "filters": [
+          {
+            "condition": "",
+            "key": "geoip.city_name",
+            "operator": "!=",
+            "value": "Harderwijk"
+          }
+        ],
+        "hide": 0,
+        "label": null,
+        "name": "Filters",
+        "skipUrlSync": false,
+        "type": "adhoc"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": true,
+          "tags": [],
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": "Elasticsearch",
+        "definition": "{\"find\": \"terms\", \"field\": \"eventName.keyword\"}",
+        "error": null,
+        "hide": 0,
+        "includeAll": true,
+        "label": "Event type",
+        "multi": true,
+        "name": "event_type",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "AddCommunicationToCase",
+            "value": "AddCommunicationToCase"
+          },
+          {
+            "selected": false,
+            "text": "AddUserToGroup",
+            "value": "AddUserToGroup"
+          },
+          {
+            "selected": false,
+            "text": "AssumeRole",
+            "value": "AssumeRole"
+          },
+          {
+            "selected": false,
+            "text": "AttachGroupPolicy",
+            "value": "AttachGroupPolicy"
+          },
+          {
+            "selected": false,
+            "text": "AttachInternetGateway",
+            "value": "AttachInternetGateway"
+          },
+          {
+            "selected": false,
+            "text": "AttachPolicy",
+            "value": "AttachPolicy"
+          },
+          {
+            "selected": false,
+            "text": "AttachUserPolicy",
+            "value": "AttachUserPolicy"
+          },
+          {
+            "selected": false,
+            "text": "AuthorizeSecurityGroupEgress",
+            "value": "AuthorizeSecurityGroupEgress"
+          },
+          {
+            "selected": false,
+            "text": "AuthorizeSecurityGroupIngress",
+            "value": "AuthorizeSecurityGroupIngress"
+          },
+          {
+            "selected": false,
+            "text": "ConsoleLogin",
+            "value": "ConsoleLogin"
+          },
+          {
+            "selected": false,
+            "text": "CreateAccessKey",
+            "value": "CreateAccessKey"
+          },
+          {
+            "selected": false,
+            "text": "CreateBucket",
+            "value": "CreateBucket"
+          },
+          {
+            "selected": false,
+            "text": "CreateGroup",
+            "value": "CreateGroup"
+          },
+          {
+            "selected": false,
+            "text": "CreateInternetGateway",
+            "value": "CreateInternetGateway"
+          },
+          {
+            "selected": false,
+            "text": "CreatePolicyVersion",
+            "value": "CreatePolicyVersion"
+          },
+          {
+            "selected": false,
+            "text": "CreateRoute",
+            "value": "CreateRoute"
+          },
+          {
+            "selected": false,
+            "text": "CreateRouteTable",
+            "value": "CreateRouteTable"
+          },
+          {
+            "selected": false,
+            "text": "CreateSecurityGroup",
+            "value": "CreateSecurityGroup"
+          },
+          {
+            "selected": false,
+            "text": "CreateServiceLinkedRole",
+            "value": "CreateServiceLinkedRole"
+          },
+          {
+            "selected": false,
+            "text": "CreateSubnet",
+            "value": "CreateSubnet"
+          },
+          {
+            "selected": false,
+            "text": "CreateTrail",
+            "value": "CreateTrail"
+          },
+          {
+            "selected": false,
+            "text": "CreateUser",
+            "value": "CreateUser"
+          },
+          {
+            "selected": false,
+            "text": "CreateVpc",
+            "value": "CreateVpc"
+          },
+          {
+            "selected": false,
+            "text": "DeleteAccessKey",
+            "value": "DeleteAccessKey"
+          },
+          {
+            "selected": false,
+            "text": "DeletePolicyVersion",
+            "value": "DeletePolicyVersion"
+          },
+          {
+            "selected": false,
+            "text": "DescribeAccount",
+            "value": "DescribeAccount"
+          },
+          {
+            "selected": false,
+            "text": "DescribeAccountAttributes",
+            "value": "DescribeAccountAttributes"
+          },
+          {
+            "selected": false,
+            "text": "DescribeAddresses",
+            "value": "DescribeAddresses"
+          },
+          {
+            "selected": false,
+            "text": "DescribeAffectedEntities",
+            "value": "DescribeAffectedEntities"
+          },
+          {
+            "selected": false,
+            "text": "DescribeAlarms",
+            "value": "DescribeAlarms"
+          },
+          {
+            "selected": false,
+            "text": "DescribeAvailabilityZones",
+            "value": "DescribeAvailabilityZones"
+          },
+          {
+            "selected": false,
+            "text": "DescribeBudgetActionsForAccount",
+            "value": "DescribeBudgetActionsForAccount"
+          },
+          {
+            "selected": false,
+            "text": "DescribeBudgetActionsForBudget",
+            "value": "DescribeBudgetActionsForBudget"
+          },
+          {
+            "selected": false,
+            "text": "DescribeBudgetPerformanceHistory",
+            "value": "DescribeBudgetPerformanceHistory"
+          },
+          {
+            "selected": false,
+            "text": "DescribeBudgets",
+            "value": "DescribeBudgets"
+          },
+          {
+            "selected": false,
+            "text": "DescribeCases",
+            "value": "DescribeCases"
+          },
+          {
+            "selected": false,
+            "text": "DescribeCheckSummaries",
+            "value": "DescribeCheckSummaries"
+          },
+          {
+            "selected": false,
+            "text": "DescribeChecks",
+            "value": "DescribeChecks"
+          },
+          {
+            "selected": false,
+            "text": "DescribeClassicLinkInstances",
+            "value": "DescribeClassicLinkInstances"
+          },
+          {
+            "selected": false,
+            "text": "DescribeConfigurationRecorderStatus",
+            "value": "DescribeConfigurationRecorderStatus"
+          },
+          {
+            "selected": false,
+            "text": "DescribeConfigurationRecorders",
+            "value": "DescribeConfigurationRecorders"
+          },
+          {
+            "selected": false,
+            "text": "DescribeCustomerGateways",
+            "value": "DescribeCustomerGateways"
+          },
+          {
+            "selected": false,
+            "text": "DescribeDhcpOptions",
+            "value": "DescribeDhcpOptions"
+          },
+          {
+            "selected": false,
+            "text": "DescribeEgressOnlyInternetGateways",
+            "value": "DescribeEgressOnlyInternetGateways"
+          },
+          {
+            "selected": false,
+            "text": "DescribeEntityAggregates",
+            "value": "DescribeEntityAggregates"
+          },
+          {
+            "selected": false,
+            "text": "DescribeEventAggregates",
+            "value": "DescribeEventAggregates"
+          },
+          {
+            "selected": false,
+            "text": "DescribeEventDetails",
+            "value": "DescribeEventDetails"
+          },
+          {
+            "selected": false,
+            "text": "DescribeEvents",
+            "value": "DescribeEvents"
+          },
+          {
+            "selected": false,
+            "text": "DescribeFlowLogs",
+            "value": "DescribeFlowLogs"
+          },
+          {
+            "selected": false,
+            "text": "DescribeHealthServiceStatusForOrganization",
+            "value": "DescribeHealthServiceStatusForOrganization"
+          },
+          {
+            "selected": false,
+            "text": "DescribeHosts",
+            "value": "DescribeHosts"
+          },
+          {
+            "selected": false,
+            "text": "DescribeImages",
+            "value": "DescribeImages"
+          },
+          {
+            "selected": false,
+            "text": "DescribeInstanceAttribute",
+            "value": "DescribeInstanceAttribute"
+          },
+          {
+            "selected": false,
+            "text": "DescribeInstanceCreditSpecifications",
+            "value": "DescribeInstanceCreditSpecifications"
+          },
+          {
+            "selected": false,
+            "text": "DescribeInstanceStatus",
+            "value": "DescribeInstanceStatus"
+          },
+          {
+            "selected": false,
+            "text": "DescribeInstanceTypeOfferings",
+            "value": "DescribeInstanceTypeOfferings"
+          },
+          {
+            "selected": false,
+            "text": "DescribeInstanceTypes",
+            "value": "DescribeInstanceTypes"
+          },
+          {
+            "selected": false,
+            "text": "DescribeInstances",
+            "value": "DescribeInstances"
+          },
+          {
+            "selected": false,
+            "text": "DescribeInternetGateways",
+            "value": "DescribeInternetGateways"
+          },
+          {
+            "selected": false,
+            "text": "DescribeKeyPairs",
+            "value": "DescribeKeyPairs"
+          },
+          {
+            "selected": false,
+            "text": "DescribeLaunchTemplates",
+            "value": "DescribeLaunchTemplates"
+          },
+          {
+            "selected": false,
+            "text": "DescribeLoadBalancers",
+            "value": "DescribeLoadBalancers"
+          },
+          {
+            "selected": false,
+            "text": "DescribeManagedPrefixLists",
+            "value": "DescribeManagedPrefixLists"
+          },
+          {
+            "selected": false,
+            "text": "DescribeMetricFilters",
+            "value": "DescribeMetricFilters"
+          },
+          {
+            "selected": false,
+            "text": "DescribeNatGateways",
+            "value": "DescribeNatGateways"
+          },
+          {
+            "selected": false,
+            "text": "DescribeNetworkAcls",
+            "value": "DescribeNetworkAcls"
+          },
+          {
+            "selected": false,
+            "text": "DescribeNetworkInterfaces",
+            "value": "DescribeNetworkInterfaces"
+          },
+          {
+            "selected": false,
+            "text": "DescribeNotificationsForBudget",
+            "value": "DescribeNotificationsForBudget"
+          },
+          {
+            "selected": false,
+            "text": "DescribeOrganization",
+            "value": "DescribeOrganization"
+          },
+          {
+            "selected": false,
+            "text": "DescribeOrganizationalUnit",
+            "value": "DescribeOrganizationalUnit"
+          },
+          {
+            "selected": false,
+            "text": "DescribePlacementGroups",
+            "value": "DescribePlacementGroups"
+          },
+          {
+            "selected": false,
+            "text": "DescribePolicy",
+            "value": "DescribePolicy"
+          },
+          {
+            "selected": false,
+            "text": "DescribeRegions",
+            "value": "DescribeRegions"
+          },
+          {
+            "selected": false,
+            "text": "DescribeRouteTables",
+            "value": "DescribeRouteTables"
+          },
+          {
+            "selected": false,
+            "text": "DescribeSecurityGroups",
+            "value": "DescribeSecurityGroups"
+          },
+          {
+            "selected": false,
+            "text": "DescribeServices",
+            "value": "DescribeServices"
+          },
+          {
+            "selected": false,
+            "text": "DescribeSnapshots",
+            "value": "DescribeSnapshots"
+          },
+          {
+            "selected": false,
+            "text": "DescribeSpotFleetRequests",
+            "value": "DescribeSpotFleetRequests"
+          },
+          {
+            "selected": false,
+            "text": "DescribeSpotInstanceRequests",
+            "value": "DescribeSpotInstanceRequests"
+          },
+          {
+            "selected": false,
+            "text": "DescribeStaleSecurityGroups",
+            "value": "DescribeStaleSecurityGroups"
+          },
+          {
+            "selected": false,
+            "text": "DescribeSubnets",
+            "value": "DescribeSubnets"
+          },
+          {
+            "selected": false,
+            "text": "DescribeSubscribersForNotification",
+            "value": "DescribeSubscribersForNotification"
+          },
+          {
+            "selected": false,
+            "text": "DescribeTags",
+            "value": "DescribeTags"
+          },
+          {
+            "selected": false,
+            "text": "DescribeTrails",
+            "value": "DescribeTrails"
+          },
+          {
+            "selected": false,
+            "text": "DescribeVolumeStatus",
+            "value": "DescribeVolumeStatus"
+          },
+          {
+            "selected": false,
+            "text": "DescribeVolumes",
+            "value": "DescribeVolumes"
+          },
+          {
+            "selected": false,
+            "text": "DescribeVolumesModifications",
+            "value": "DescribeVolumesModifications"
+          },
+          {
+            "selected": false,
+            "text": "DescribeVpcAttribute",
+            "value": "DescribeVpcAttribute"
+          },
+          {
+            "selected": false,
+            "text": "DescribeVpcClassicLink",
+            "value": "DescribeVpcClassicLink"
+          },
+          {
+            "selected": false,
+            "text": "DescribeVpcClassicLinkDnsSupport",
+            "value": "DescribeVpcClassicLinkDnsSupport"
+          },
+          {
+            "selected": false,
+            "text": "DescribeVpcEndpointServiceConfigurations",
+            "value": "DescribeVpcEndpointServiceConfigurations"
+          },
+          {
+            "selected": false,
+            "text": "DescribeVpcEndpoints",
+            "value": "DescribeVpcEndpoints"
+          },
+          {
+            "selected": false,
+            "text": "DescribeVpcPeeringConnections",
+            "value": "DescribeVpcPeeringConnections"
+          },
+          {
+            "selected": false,
+            "text": "DescribeVpcs",
+            "value": "DescribeVpcs"
+          },
+          {
+            "selected": false,
+            "text": "DescribeVpnConnections",
+            "value": "DescribeVpnConnections"
+          },
+          {
+            "selected": false,
+            "text": "DescribeVpnGateways",
+            "value": "DescribeVpnGateways"
+          },
+          {
+            "selected": false,
+            "text": "DetachPolicy",
+            "value": "DetachPolicy"
+          },
+          {
+            "selected": false,
+            "text": "DetachUserPolicy",
+            "value": "DetachUserPolicy"
+          },
+          {
+            "selected": false,
+            "text": "ExitRole",
+            "value": "ExitRole"
+          },
+          {
+            "selected": false,
+            "text": "GenerateServiceLastAccessedDetails",
+            "value": "GenerateServiceLastAccessedDetails"
+          },
+          {
+            "selected": false,
+            "text": "GetAccelerateConfiguration",
+            "value": "GetAccelerateConfiguration"
+          },
+          {
+            "selected": false,
+            "text": "GetAccessKeyLastUsed",
+            "value": "GetAccessKeyLastUsed"
+          },
+          {
+            "selected": false,
+            "text": "GetAccountAuthorizationDetails",
+            "value": "GetAccountAuthorizationDetails"
+          },
+          {
+            "selected": false,
+            "text": "GetAccountPasswordPolicy",
+            "value": "GetAccountPasswordPolicy"
+          },
+          {
+            "selected": false,
+            "text": "GetAccountPublicAccessBlock",
+            "value": "GetAccountPublicAccessBlock"
+          },
+          {
+            "selected": false,
+            "text": "GetAccountSummary",
+            "value": "GetAccountSummary"
+          },
+          {
+            "selected": false,
+            "text": "GetBucketAcl",
+            "value": "GetBucketAcl"
+          },
+          {
+            "selected": false,
+            "text": "GetBucketAnalyticsConfiguration",
+            "value": "GetBucketAnalyticsConfiguration"
+          },
+          {
+            "selected": false,
+            "text": "GetBucketCors",
+            "value": "GetBucketCors"
+          },
+          {
+            "selected": false,
+            "text": "GetBucketEncryption",
+            "value": "GetBucketEncryption"
+          },
+          {
+            "selected": false,
+            "text": "GetBucketIntelligentTieringConfiguration",
+            "value": "GetBucketIntelligentTieringConfiguration"
+          },
+          {
+            "selected": false,
+            "text": "GetBucketInventoryConfiguration",
+            "value": "GetBucketInventoryConfiguration"
+          },
+          {
+            "selected": false,
+            "text": "GetBucketLifecycle",
+            "value": "GetBucketLifecycle"
+          },
+          {
+            "selected": false,
+            "text": "GetBucketLocation",
+            "value": "GetBucketLocation"
+          },
+          {
+            "selected": false,
+            "text": "GetBucketLogging",
+            "value": "GetBucketLogging"
+          },
+          {
+            "selected": false,
+            "text": "GetBucketNotification",
+            "value": "GetBucketNotification"
+          },
+          {
+            "selected": false,
+            "text": "GetBucketObjectLockConfiguration",
+            "value": "GetBucketObjectLockConfiguration"
+          },
+          {
+            "selected": false,
+            "text": "GetBucketOwnershipControls",
+            "value": "GetBucketOwnershipControls"
+          },
+          {
+            "selected": false,
+            "text": "GetBucketPolicy",
+            "value": "GetBucketPolicy"
+          },
+          {
+            "selected": false,
+            "text": "GetBucketPolicyStatus",
+            "value": "GetBucketPolicyStatus"
+          },
+          {
+            "selected": false,
+            "text": "GetBucketPublicAccessBlock",
+            "value": "GetBucketPublicAccessBlock"
+          },
+          {
+            "selected": false,
+            "text": "GetBucketReplication",
+            "value": "GetBucketReplication"
+          },
+          {
+            "selected": false,
+            "text": "GetBucketRequestPayment",
+            "value": "GetBucketRequestPayment"
+          },
+          {
+            "selected": false,
+            "text": "GetBucketTagging",
+            "value": "GetBucketTagging"
+          },
+          {
+            "selected": false,
+            "text": "GetBucketVersioning",
+            "value": "GetBucketVersioning"
+          },
+          {
+            "selected": false,
+            "text": "GetBucketWebsite",
+            "value": "GetBucketWebsite"
+          },
+          {
+            "selected": false,
+            "text": "GetCallerIdentity",
+            "value": "GetCallerIdentity"
+          },
+          {
+            "selected": false,
+            "text": "GetEnrollmentStatus",
+            "value": "GetEnrollmentStatus"
+          },
+          {
+            "selected": false,
+            "text": "GetEventSelectors",
+            "value": "GetEventSelectors"
+          },
+          {
+            "selected": false,
+            "text": "GetGroup",
+            "value": "GetGroup"
+          },
+          {
+            "selected": false,
+            "text": "GetGroupPolicy",
+            "value": "GetGroupPolicy"
+          },
+          {
+            "selected": false,
+            "text": "GetInsightSelectors",
+            "value": "GetInsightSelectors"
+          },
+          {
+            "selected": false,
+            "text": "GetPolicy",
+            "value": "GetPolicy"
+          },
+          {
+            "selected": false,
+            "text": "GetPolicyVersion",
+            "value": "GetPolicyVersion"
+          },
+          {
+            "selected": false,
+            "text": "GetResourceShareAssociations",
+            "value": "GetResourceShareAssociations"
+          },
+          {
+            "selected": false,
+            "text": "GetRole",
+            "value": "GetRole"
+          },
+          {
+            "selected": false,
+            "text": "GetServiceLastAccessedDetails",
+            "value": "GetServiceLastAccessedDetails"
+          },
+          {
+            "selected": false,
+            "text": "GetTrailStatus",
+            "value": "GetTrailStatus"
+          },
+          {
+            "selected": false,
+            "text": "GetUser",
+            "value": "GetUser"
+          },
+          {
+            "selected": false,
+            "text": "ListAWSServiceAccessForOrganization",
+            "value": "ListAWSServiceAccessForOrganization"
+          },
+          {
+            "selected": false,
+            "text": "ListAccessKeys",
+            "value": "ListAccessKeys"
+          },
+          {
+            "selected": false,
+            "text": "ListAccessPoints",
+            "value": "ListAccessPoints"
+          },
+          {
+            "selected": false,
+            "text": "ListAccountAliases",
+            "value": "ListAccountAliases"
+          },
+          {
+            "selected": false,
+            "text": "ListAccounts",
+            "value": "ListAccounts"
+          },
+          {
+            "selected": false,
+            "text": "ListAccountsForParent",
+            "value": "ListAccountsForParent"
+          },
+          {
+            "selected": false,
+            "text": "ListAttachedGroupPolicies",
+            "value": "ListAttachedGroupPolicies"
+          },
+          {
+            "selected": false,
+            "text": "ListAttachedUserPolicies",
+            "value": "ListAttachedUserPolicies"
+          },
+          {
+            "selected": false,
+            "text": "ListBuckets",
+            "value": "ListBuckets"
+          },
+          {
+            "selected": false,
+            "text": "ListChildren",
+            "value": "ListChildren"
+          },
+          {
+            "selected": false,
+            "text": "ListCostCategoryDefinitions",
+            "value": "ListCostCategoryDefinitions"
+          },
+          {
+            "selected": false,
+            "text": "ListCreateAccountStatus",
+            "value": "ListCreateAccountStatus"
+          },
+          {
+            "selected": false,
+            "text": "ListDomains",
+            "value": "ListDomains"
+          },
+          {
+            "selected": false,
+            "text": "ListEntitiesForPolicy",
+            "value": "ListEntitiesForPolicy"
+          },
+          {
+            "selected": false,
+            "text": "ListFunctions20150331",
+            "value": "ListFunctions20150331"
+          },
+          {
+            "selected": false,
+            "text": "ListGroupPolicies",
+            "value": "ListGroupPolicies"
+          },
+          {
+            "selected": false,
+            "text": "ListGroups",
+            "value": "ListGroups"
+          },
+          {
+            "selected": false,
+            "text": "ListGroupsForUser",
+            "value": "ListGroupsForUser"
+          },
+          {
+            "selected": false,
+            "text": "ListInstanceProfiles",
+            "value": "ListInstanceProfiles"
+          },
+          {
+            "selected": false,
+            "text": "ListMFADevices",
+            "value": "ListMFADevices"
+          },
+          {
+            "selected": false,
+            "text": "ListOpenIDConnectProviders",
+            "value": "ListOpenIDConnectProviders"
+          },
+          {
+            "selected": false,
+            "text": "ListOperations",
+            "value": "ListOperations"
+          },
+          {
+            "selected": false,
+            "text": "ListOrganizationalUnitsForParent",
+            "value": "ListOrganizationalUnitsForParent"
+          },
+          {
+            "selected": false,
+            "text": "ListParents",
+            "value": "ListParents"
+          },
+          {
+            "selected": false,
+            "text": "ListPolicies",
+            "value": "ListPolicies"
+          },
+          {
+            "selected": false,
+            "text": "ListPoliciesGrantingServiceAccess",
+            "value": "ListPoliciesGrantingServiceAccess"
+          },
+          {
+            "selected": false,
+            "text": "ListPolicyVersions",
+            "value": "ListPolicyVersions"
+          },
+          {
+            "selected": false,
+            "text": "ListRoles",
+            "value": "ListRoles"
+          },
+          {
+            "selected": false,
+            "text": "ListRoots",
+            "value": "ListRoots"
+          },
+          {
+            "selected": false,
+            "text": "ListSAMLProviders",
+            "value": "ListSAMLProviders"
+          },
+          {
+            "selected": false,
+            "text": "ListSSHPublicKeys",
+            "value": "ListSSHPublicKeys"
+          },
+          {
+            "selected": false,
+            "text": "ListServiceSpecificCredentials",
+            "value": "ListServiceSpecificCredentials"
+          },
+          {
+            "selected": false,
+            "text": "ListSigningCertificates",
+            "value": "ListSigningCertificates"
+          },
+          {
+            "selected": false,
+            "text": "ListTags",
+            "value": "ListTags"
+          },
+          {
+            "selected": false,
+            "text": "ListTagsForResource",
+            "value": "ListTagsForResource"
+          },
+          {
+            "selected": false,
+            "text": "ListTargetsForPolicy",
+            "value": "ListTargetsForPolicy"
+          },
+          {
+            "selected": false,
+            "text": "ListUserTags",
+            "value": "ListUserTags"
+          },
+          {
+            "selected": false,
+            "text": "ListUsers",
+            "value": "ListUsers"
+          },
+          {
+            "selected": false,
+            "text": "ListVirtualMFADevices",
+            "value": "ListVirtualMFADevices"
+          },
+          {
+            "selected": false,
+            "text": "LookupEvents",
+            "value": "LookupEvents"
+          },
+          {
+            "selected": false,
+            "text": "MoveAccount",
+            "value": "MoveAccount"
+          },
+          {
+            "selected": false,
+            "text": "PasswordRecoveryCompleted",
+            "value": "PasswordRecoveryCompleted"
+          },
+          {
+            "selected": false,
+            "text": "PasswordRecoveryRequested",
+            "value": "PasswordRecoveryRequested"
+          },
+          {
+            "selected": false,
+            "text": "PutBucketPolicy",
+            "value": "PutBucketPolicy"
+          },
+          {
+            "selected": false,
+            "text": "PutBucketTagging",
+            "value": "PutBucketTagging"
+          },
+          {
+            "selected": false,
+            "text": "PutEventSelectors",
+            "value": "PutEventSelectors"
+          },
+          {
+            "selected": false,
+            "text": "PutGroupPolicy",
+            "value": "PutGroupPolicy"
+          },
+          {
+            "selected": false,
+            "text": "PutInsightSelectors",
+            "value": "PutInsightSelectors"
+          },
+          {
+            "selected": false,
+            "text": "RemoveUserFromGroup",
+            "value": "RemoveUserFromGroup"
+          },
+          {
+            "selected": false,
+            "text": "RenewRole",
+            "value": "RenewRole"
+          },
+          {
+            "selected": false,
+            "text": "RevokeSecurityGroupEgress",
+            "value": "RevokeSecurityGroupEgress"
+          },
+          {
+            "selected": false,
+            "text": "RevokeSecurityGroupIngress",
+            "value": "RevokeSecurityGroupIngress"
+          },
+          {
+            "selected": false,
+            "text": "RunInstances",
+            "value": "RunInstances"
+          },
+          {
+            "selected": false,
+            "text": "SetDefaultPolicyVersion",
+            "value": "SetDefaultPolicyVersion"
+          },
+          {
+            "selected": false,
+            "text": "SharedSnapshotVolumeCreated",
+            "value": "SharedSnapshotVolumeCreated"
+          },
+          {
+            "selected": false,
+            "text": "StartLogging",
+            "value": "StartLogging"
+          },
+          {
+            "selected": false,
+            "text": "StopLogging",
+            "value": "StopLogging"
+          },
+          {
+            "selected": false,
+            "text": "SwitchRole",
+            "value": "SwitchRole"
+          },
+          {
+            "selected": false,
+            "text": "TerminateInstances",
+            "value": "TerminateInstances"
+          },
+          {
+            "selected": false,
+            "text": "UpdateAccessKey",
+            "value": "UpdateAccessKey"
+          },
+          {
+            "selected": false,
+            "text": "UpdateTrail",
+            "value": "UpdateTrail"
+          },
+          {
+            "selected": false,
+            "text": "UpdateUser",
+            "value": "UpdateUser"
+          }
+        ],
+        "query": "{\"find\": \"terms\", \"field\": \"eventName.keyword\"}",
+        "refresh": 0,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "now-30d",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "AWS overview",
+  "uid": "pdw8GxfMz",
+  "version": 73
+}

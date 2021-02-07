@@ -1,0 +1,4 @@
+docker:
+  wanted:
+    - docker
+    - compose

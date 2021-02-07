@@ -1,0 +1,39 @@
+# placeholders at this point:
+{% set conf = salt['grains.filter_by']({
+    'Debian': {
+        'config_path': '/etc/filebeat/filebeat.yml',
+        'config_source': 'salt://filebeat/files/filebeat.jinja',
+        'runlevels_install': True,
+        'version': 7,
+    },
+    'Ubuntu': {
+        'config_path': '/etc/filebeat/filebeat.yml',
+        'config_source': 'salt://filebeat/files/filebeat.jinja',
+        'runlevels_install': True,
+        'version': 7,
+    },
+    'RedHat': {
+        'config_path': '/etc/filebeat/filebeat.yml',
+        'config_source': 'salt://filebeat/files/filebeat.jinja',
+        'runlevels_install': True,
+        'version': 7,
+    },
+    'CentOS': {
+        'config_path': '/etc/filebeat/filebeat.yml',
+        'config_source': 'salt://filebeat/files/filebeat.jinja',
+        'runlevels_install': True,
+        'version': 7,
+    },
+    'Suse': {
+        'config_path': '/etc/filebeat/filebeat.yml',
+        'config_source': 'salt://filebeat/files/filebeat.jinja',
+        'runlevels_install': True,
+        'version': 7,
+    },
+    'FreeBSD': {
+        'config_path': '/etc/filebeat/filebeat.yml',
+        'config_source': 'salt://filebeat/files/filebeat.jinja',
+        'runlevels_install': True,
+        'version': 7,
+    },
+}, merge=salt['pillar.get']('filebeat:lookup')) %}

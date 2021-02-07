@@ -1,0 +1,31 @@
+# config file version
+apiVersion: 1
+
+datasources:
+{%- if salt['pillar.get']('grafana_datasources') is defined %}
+{%-   set datasources =  salt['pillar.get']('grafana_datasources') %}
+{%-    for datasource, data in datasources.items() %}
+{%-     if data.name %}
+  - name: {{ data.name }}
+{%-     endif %}
+{%-     if data.type %}
+    type: {{ data.type }}
+{%-     endif %}
+{%-     if data.url %}
+    url: {{ data.url }}
+{%-     endif %}
+{%-     if data.access %}
+    access: {{ data.access }}
+{%-     endif %}
+{%-     if data.database %}
+    database: {{ data.database }}
+{%-     endif %}
+{%-     if data.jsonData %}
+{%-   set jsondata =  data.jsonData %}
+    jsonData:
+{%-        for key, value in jsondata.items() %}
+      {{ key }}: {{ value }}
+{%-       endfor %}
+{%-     endif %}
+{%-   endfor %}
+{%- endif %}
